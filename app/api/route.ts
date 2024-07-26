@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 	);
 
 	const completion = await groq.chat.completions.create({
-		model: "llama3-8b-8192",
+		model: "llama-3.1-8b-instant",
 		messages: [
 			{
 				role: "system",
@@ -76,7 +76,7 @@ export async function POST(request: Request) {
 			"X-API-Key": process.env.CARTESIA_API_KEY!,
 		},
 		body: JSON.stringify({
-			model_id: "sonic-english",
+			model_id: "sonic-multilingual",
 			transcript: response,
 			voice: {
 				mode: "id",
